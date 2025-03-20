@@ -1,4 +1,4 @@
-package dito.nyepring.springweb.services;
+package dito.nyepring.springweb.services.book;
 
 import dito.nyepring.springweb.domain.Book;
 import dito.nyepring.springweb.repositories.BookRepository;
