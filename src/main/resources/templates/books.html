@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring Template</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Publisher</th>
+    </tr>
+
+    <tr th:each="book :${books}">
+        <td th:text="${book.getId()}">
+            123
+        </td>
+
+        <td th:text="${book.getTitle()}">Vincent</td>
+        <td th:text="${book.publisher.getPublisherName()}"></td>
+    </tr>
+</table>
+</body>
+</html>
