@@ -1,16 +1,15 @@
 package dito.nyepring.springweb.controllers;
 
-import dito.nyepring.springweb.services.BookService;
+import dito.nyepring.springweb.services.book.BookServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BookController {
-    private final BookService bookService;
+    private final BookServiceImpl bookService;
 
-    public BookController(BookService bookService) {
+    public BookController(BookServiceImpl bookService) {
         this.bookService = bookService;
     }
 
@@ -21,13 +20,13 @@ public class BookController {
         return "books";
     }
 
-    @RequestMapping("/api/books/{id}")
-    public String getBooksById(Model model, @PathVariable Long id) {
-        model.addAttribute("books", bookService.findById(id));
-
-        if (id != null) {
-            return "Books Id " + id;
-        }
-        return "Book is Missing !!";
-    }
+//    @PostMapping("/api/books/{id}")
+//    public String getBooksById(Model model, @PathVariable Long id) {
+//        model.addAttribute("books", bookService.findById(id));
+//
+//        if (id != null) {
+//            return "Books I'd " + id;
+//        }
+//        return "Book is Missing !!";
+//    }
 }
